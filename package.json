@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack --config config/prod.config.babel.js -p",
+    "start": "NODE_ENV=development webpack-dev-server --config config/dev.config.babel.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap-vue": "^2.0.0-rc.9",
+    "jquery": "^3.3.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -42,8 +46,8 @@
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^15.0.9",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.7.0",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.11.1",
+    "webpack-merge": "4.1.1"
   }
 }
