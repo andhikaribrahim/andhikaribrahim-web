@@ -6,7 +6,7 @@
 		<br />
 		<p class="jargon-desc text-justify">
 			Hi there, my name is Andhika Rachmat Ibrahim. I'm currently working for <a href="http://jojonomic.com" target="_blank">Jojonomic Pte Ltd</a>.
-			I'm a web developer born in Jakarta, Indonesia. Grows up in the 90's vibe, living with a passion to build a <b>high performing</b> websites (or applications)
+			I'm a web developer born in Jakarta, Indonesia. Grows up in the 90's vibe, living with a passion to build <b>high performing</b> websites (or applications)
 			with <b>stability</b> in mind and in love with <b>development design pattern</b>.
 		</p>
 	</div>
