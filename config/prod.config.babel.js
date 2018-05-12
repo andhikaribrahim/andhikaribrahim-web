@@ -6,6 +6,7 @@ import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import UglifyJS from 'uglifyjs-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import VueLoaderPlugin from 'vue-loader/lib/plugin'
+import DelWebpackPlugin from 'del-webpack-plugin'
 
 export default merge(baseConfig, {
 	output: {
@@ -22,7 +23,8 @@ export default merge(baseConfig, {
 			{
 				test: /\.css$/,
 				loader: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader' ] })
-			}
+			},
+			{ test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, loader: "file" }
 		],
 	},
 
@@ -48,7 +50,10 @@ export default merge(baseConfig, {
             minimize: true,
             debug: false
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new DelWebpackPlugin({
+	      info: true,
+	    }),
 	],
 	devtool: '#source-map'
 })
