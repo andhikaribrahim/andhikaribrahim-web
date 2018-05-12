@@ -5,6 +5,7 @@ import baseConfig from './base.config.babel.js'
 import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 import UglifyJS from 'uglifyjs-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import VueLoaderPlugin from 'vue-loader/lib/plugin'
 
 export default merge(baseConfig, {
 	output: {
@@ -17,6 +18,10 @@ export default merge(baseConfig, {
 			{
 				test: /\.styl$/,
 				loader: ExtractTextWebpackPlugin.extract('css-loader!stylus-loader')
+			},
+			{
+				test: /\.css$/,
+				loader: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader' ] })
 			}
 		],
 	},
@@ -24,7 +29,7 @@ export default merge(baseConfig, {
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
-      template: path.resolve(__dirname, '../index.prod.html')
+      	template: path.resolve(__dirname, '../index.prod.html')
 		}),
 		new webpack.DefinePlugin({
             'process.env': {
@@ -42,7 +47,8 @@ export default merge(baseConfig, {
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
-        })
+        }),
+        new VueLoaderPlugin()
 	],
 	devtool: '#source-map'
 })
