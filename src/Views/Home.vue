@@ -6,7 +6,6 @@
 		<Jargon></Jargon>
 		<div class="clearfix"></div>
 		<br />
-		<hr>
 		<Skillset></Skillset>
 	</div>
 </template>
