@@ -1,9 +1,10 @@
-import merge from 'webpack-merge'
-import baseConfig from './base.config.babel.js'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import VueLoaderPlugin from 'vue-loader/lib/plugin'
+import path from 'path';
+import webpack from 'webpack';
+import merge from 'webpack-merge';
+import baseConfig from './base.config.babel.js';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
-const path = require('path')
 
 export default merge(baseConfig, {
 	output: {
@@ -47,6 +48,12 @@ export default merge(baseConfig, {
 		new HtmlWebpackPlugin({
             template: './index.html'
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+        	'process.env': {
+		    	NODE_ENV: '"development"',
+				DEBUG_MODE: true,
+		    }
+        })
 	]
-})
+});

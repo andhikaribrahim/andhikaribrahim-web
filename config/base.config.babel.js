@@ -1,6 +1,5 @@
-import webpack from 'webpack'
-import path from 'path'
-
+import webpack from 'webpack';
+import path from 'path';
 
 const baseConfig = {
 	entry: {
@@ -52,6 +51,6 @@ const baseConfig = {
 			'NODE_ENV',
 		])
 	],
-}
+};
 
 export default baseConfig;
