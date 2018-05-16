@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<!-- <Navigation></Navigation>
-		<div class="clearfix"></div> -->
+		<Navigation></Navigation>
+		<div class="clearfix"></div>
 		<router-view></router-view>
 		<div class="clearfix"></div>
 		<Footer></Footer>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-	import Navigation from 'Components/Navigation'
-	import Footer from 'Components/Footer'
+	import Navigation from 'Components/Navigation';
+	import Footer from 'Components/Footer';
 	export default {
 		name: 'App',
 		components:{
 			Navigation, Footer
 		}
-	}
+	};
 </script>

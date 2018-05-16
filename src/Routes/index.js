@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import Home from 'Views/Home'
-import Projects from 'Views/Projects'
-import Articles from 'Views/Articles'
+import Home from 'Views/Home';
+import Projects from 'Views/Projects';
+import Articles from 'Views/Articles';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const routes = [
 	{
@@ -23,9 +23,9 @@ const routes = [
 		name: 'Articles',
 		component: Articles
 	}
-]
+];
 
 export default new Router({
 	root: '/',
 	routes
-})
+});

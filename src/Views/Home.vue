@@ -11,12 +11,12 @@
 </template>
 
 <script>
-	import Jargon from 'Components/Home/Jargon'
-	import Skillset from 'Components/Home/Skillset'
+	import Jargon from 'Components/Home/Jargon';
+	import Skillset from 'Components/Home/Skillset';
 	export default {
 		name: 'Home',
 		components: {
 			Jargon, Skillset
 		}
-	}
+	};
 </script>
