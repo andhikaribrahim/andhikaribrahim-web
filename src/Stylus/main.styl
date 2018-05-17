@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700')
 @import url('https://unpkg.com/ionicons@4.0.0/dist/css/ionicons.min.css')
 
-@import './extends'
-
 html
 	font-size 1rem
 	height 100%
@@ -72,3 +70,37 @@ img.profile
 	&--title
 		text-align center !important
 		margin-bottom 0.8rem
+		
+.projects
+	padding-top 50px
+	.card-deck
+		.card
+			margin 0 28px
+			margin-bottom 1rem
+			max-width 18rem
+			min-width 18rem
+			.card-text
+				position relative
+				max-height 120px
+				font-size 13.8px
+				letter-spacing -.01em
+				line-height 1.58
+				overflow hidden !important
+				text-overflow ellipsis !important
+				display: -webkit-box
+				-webkit-line-clamp: 3
+				-webkit-box-orient: vertical
+				&:after
+					content ""
+					text-align right
+					position absolute
+					bottom 0
+					right 0
+					width 35%
+					height 20px
+					background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+			.card-footer
+				a
+					color #757575
+					&:hover
+						text-decoration none !important
