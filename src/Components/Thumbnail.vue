@@ -4,6 +4,7 @@
 			<img src="http://placehold.it/362x180" alt="Card image cap" class="card-img">
 			<div class="card-body">
 				<h5 class="card-title">Card Title</h5>
+				<hr />
 				<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
