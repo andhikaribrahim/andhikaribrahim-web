@@ -26,11 +26,6 @@
 				></Thumbnail>
 			</transition>
 		</div>
-		<Button
-			btn-text="Load More.."
-			btn-style="btn btn-light"
-			class="projects-load"
-		></Button>
 	</div>
 </template>
 
@@ -90,35 +85,3 @@
 		}
 	};
 </script>
-
-<style scoped>
-	.fade-enter,
-	.fade-in-enter {
-		opacity: 1;
-		transform: translate(-10%, 0);
-	}
-
-	.fade-leave-to,
-	.fade-in-leave-to {
-		opacity: 0;
-		transform: translate(-10%, 0);
-	}
-
-	.fade-enter,
-	.fade-leave-to { opacity: 0; }
-
-	.fade-leave,
-	.fade-enter-to { opacity: 1; }
-
-	.fade-enter-active,
-	.fade-leave-active { transition: all 385ms ease-in-out;}
-
-	.fade-in-enter,
-	.fade-in-leave-to { opacity: 0; }
-
-	.fade-in-leave,
-	.fade-in-enter-to { opacity: 1; }
-
-	.fade-in-enter-active,
-	.fade-in-leave-active { transition: all 385ms ease-in-out; transition-delay: 385ms; }
-</style>
