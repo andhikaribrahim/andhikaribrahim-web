@@ -26,6 +26,11 @@
 				></Thumbnail>
 			</transition>
 		</div>
+		<Button
+			btn-text="Load More.."
+			btn-style="btn btn-light"
+			class="projects-load"
+		></Button>
 	</div>
 </template>
 
