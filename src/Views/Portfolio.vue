@@ -1,16 +1,119 @@
 <template>
 	<div class="projects container">
-		<div class="row d-flex justify-content-center">
-			<Thumbnail v-for="n in 6"></Thumbnail>
+		<div class="row">
+			<transition name="fade"
+			 v-for="portfolio in portfolios"
+			 v-bind:key="portfolio.id"
+			>
+				<Thumbnail-Loading 
+					v-show="loading"
+				 	class="col-4">
+				</Thumbnail-Loading>
+			</transition>		
+			<transition 
+				name="fade-in"
+				v-for="portfolio in portfolios"
+				v-bind:key="portfolio.title"
+			>
+				<Thumbnail
+				 v-show="!loading"
+				 v-bind:id="portfolio.id"
+				 v-bind:title="portfolio.title"
+				 v-bind:previewImage="portfolio.previewImage"
+				 v-bind:description="portfolio.description"
+				 v-bind:link="portfolio.link"
+				 class="col-4"
+				></Thumbnail>
+			</transition>
 		</div>
 	</div>
 </template>
 
 <script>
 	import Thumbnail from 'Components/Thumbnail';
+	import ThumbnailLoading from 'Components/ThumbnailLoading';
 	export default {
 		components: {
-			Thumbnail
+			Thumbnail, ThumbnailLoading
+		},
+		mounted () {
+			setTimeout(() => {
+				this.loading = false;
+			}, 1500);
+		},
+		data: () => {
+			return {
+				loading: true,
+				portfolios: [
+					{
+						id: 0,
+						title: 'Richard Rain Blog',
+						previewImage: '/public/portfolios/richardrain.png',
+						description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, maxime, fuga dolorem ducimus perspiciatis fugiat obcaecati accusamus inventore voluptates at eius facilis labore, iusto odio voluptas consectetur laborum velit distinctio?',
+						link: 'https://richard-rain.com/'
+					},
+					{
+						id: 1,
+						title: 'Serenia Hills Landing Page',
+						previewImage: '/public/portfolios/sereniahills.png',
+						description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, maxime, fuga dolorem ducimus perspiciatis fugiat obcaecati accusamus inventore voluptates at eius facilis labore, iusto odio voluptas consectetur laborum velit distinctio?',
+						link: 'https://serenia-hills.com/'
+					},
+					{
+						id: 2,
+						title: 'Perumperindo Landing Page',
+						previewImage: '/public/portfolios/perumperindo.png',
+						description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, maxime, fuga dolorem ducimus perspiciatis fugiat obcaecati accusamus inventore voluptates at eius facilis labore, iusto odio voluptas consectetur laborum velit distinctio?',
+						link: 'https://perumperindo.co.id/'
+					},
+					{
+						id: 3,
+						title: 'Kredit Bijak',
+						previewImage: '/public/portfolios/kreditbijak.png',
+						description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, maxime, fuga dolorem ducimus perspiciatis fugiat obcaecati accusamus inventore voluptates at eius facilis labore, iusto odio voluptas consectetur laborum velit distinctio?',
+						link: 'https://kreditbijak.com/'
+					},
+					{
+						id: 4,
+						title: 'Tryout PDI-P 2018',
+						previewImage: '/public/portfolios/pdip.png',
+						description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, maxime, fuga dolorem ducimus perspiciatis fugiat obcaecati accusamus inventore voluptates at eius facilis labore, iusto odio voluptas consectetur laborum velit distinctio?',
+						link: 'http://tryoutpdiperjuangan2018.com/'
+					},
+				]
+			}
 		}
 	};
 </script>
+
+<style scoped>
+	.fade-enter,
+	.fade-in-enter {
+		opacity: 1;
+		transform: translate(-10%, 0);
+	}
+
+	.fade-leave-to,
+	.fade-in-leave-to {
+		opacity: 0;
+		transform: translate(-10%, 0);
+	}
+
+	.fade-enter,
+	.fade-leave-to { opacity: 0; }
+
+	.fade-leave,
+	.fade-enter-to { opacity: 1; }
+
+	.fade-enter-active,
+	.fade-leave-active { transition: all 385ms ease-in-out;}
+
+	.fade-in-enter,
+	.fade-in-leave-to { opacity: 0; }
+
+	.fade-in-leave,
+	.fade-in-enter-to { opacity: 1; }
+
+	.fade-in-enter-active,
+	.fade-in-leave-active { transition: all 385ms ease-in-out; transition-delay: 385ms; }
+</style>

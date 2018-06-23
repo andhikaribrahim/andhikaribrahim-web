@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Home from 'Views/Home';
 import Portfolio from 'Views/Portfolio';
-import Articles from 'Views/Articles';
+import Blogs from 'Views/Blogs';
 
 Vue.use(Router);
 
@@ -19,9 +19,9 @@ const routes = [
 		component: Portfolio
 	},
 	{
-		path: '/Articles',
-		name: 'Articles',
-		component: Articles
+		path: '/blogs',
+		name: 'Blogs',
+		component: Blogs
 	}
 ];
 
